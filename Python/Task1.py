@@ -1,9 +1,11 @@
 ## Step 1: Load the corpus using load files and make sure you set the encoding to latin1. (Task 1.3)
 
-### Get and group the data
 import sklearn.datasets
 import pandas as pd
+from sklearn.feature_extraction.text import CountVectorizer
 
+
+### Get and group the data
 
 def load_files_of_bbc(category=None):
     """
@@ -57,10 +59,37 @@ print(allBBC_DF)
 ### Plot the distribution of the instances in each class
 
 sp = allBBC_DF.loc[row_name].plot(by=allBBCFiles.target_names, title=row_name, figsize=(12, 6),
-                               kind='barh')
+                                  kind='barh')
 
 ### Save the graphic in a file called BBC-distribution.pdf
 
 fig = sp.get_figure()
 fig.savefig('../out/BBC-distribution.pdf')
+
+## Step 3: Pre-process the dataset to have the features ready to be used by a multinomial Naive Bayes classifier. (Task 1.4)
+
+# %% md
+
+### Prepare the vectorizer
+vectorizer = CountVectorizer()
+
+
+def get_matrix_and_vocabulary(data):
+    return vectorizer.fit_transform(data).toarray(), {k: v for k, v in
+                                                      sorted(vectorizer.vocabulary_.items(), key=lambda item: item[1])}
+
+
+# %% md
+
+### Extract matrices
+
+# %%
+
+# TODO: (optional) purify data
+allBBCMatrix, allBBCVocab = get_matrix_and_vocabulary(allBBCFiles.data)
+businessMatrix, businessVocab = get_matrix_and_vocabulary(businessFiles.data)
+entertainmentMatrix, entertainmentVocab = get_matrix_and_vocabulary(entertainmentFiles.data)
+politicsMatrix, politicsVocab = get_matrix_and_vocabulary(politicsFiles.data)
+sportMatrix, sportVocab = get_matrix_and_vocabulary(sportFiles.data)
+techMatrix, techVocab = get_matrix_and_vocabulary(techFiles.data)
 
