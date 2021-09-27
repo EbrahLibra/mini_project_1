@@ -1,12 +1,12 @@
-## Step 1: Load the corpus using load files and make sure you set the encoding to latin1. (Task 1.3)
-
 import sklearn.datasets
 import pandas as pd
 from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.model_selection import train_test_split
 
 
-### Get and group the data
+# Step 1: Load the corpus using load files and make sure you set the encoding to latin1. (Task 1.3)
 
+# Get and group the data
 def load_files_of_bbc(category=None):
     """
     Gets the corpus of data
@@ -39,10 +39,10 @@ sportFiles, sportDataSize, sport_filenames = load_files_of_bbc('sport')
 # #BBC tech Data
 techFiles, techDataSize, tech_filenames = load_files_of_bbc('tech')
 
-## Step 2: Plot the distribution of the instances in each class and save the graphic in a file called BBC-distribution.pdf. (Task 1.2)
+# Step 2: Plot the distribution of the instances in each class
+# and save the graphic in a file called BBC-distribution.pdf. (Task 1.2)
 
-### Create Dataframe
-
+# Create Dataframe
 row_name = 'Records Count'
 allBBC_DF = pd.DataFrame({
     'Business': businessDataSize,
@@ -56,21 +56,18 @@ allBBC_DF = pd.DataFrame({
 
 print(allBBC_DF)
 
-### Plot the distribution of the instances in each class
-
+# Plot the distribution of the instances in each class
 sp = allBBC_DF.loc[row_name].plot(by=allBBCFiles.target_names, title=row_name, figsize=(12, 6),
                                   kind='barh')
 
-### Save the graphic in a file called BBC-distribution.pdf
-
+# Save the graphic in a file called BBC-distribution.pdf
 fig = sp.get_figure()
 fig.savefig('../out/BBC-distribution.pdf')
 
-## Step 3: Pre-process the dataset to have the features ready to be used by a multinomial Naive Bayes classifier. (Task 1.4)
+# Step 3: Pre-process the dataset to have the features ready
+# to be used by a multinomial Naive Bayes classifier. (Task 1.4)
 
-# %% md
-
-### Prepare the vectorizer
+# Prepare the vectorizer
 vectorizer = CountVectorizer()
 
 
@@ -79,12 +76,7 @@ def get_matrix_and_vocabulary(data):
                                                       sorted(vectorizer.vocabulary_.items(), key=lambda item: item[1])}
 
 
-# %% md
-
-### Extract matrices
-
-# %%
-
+# Extract matrices
 # TODO: (optional) purify data
 allBBCMatrix, allBBCVocab = get_matrix_and_vocabulary(allBBCFiles.data)
 businessMatrix, businessVocab = get_matrix_and_vocabulary(businessFiles.data)
@@ -93,3 +85,7 @@ politicsMatrix, politicsVocab = get_matrix_and_vocabulary(politicsFiles.data)
 sportMatrix, sportVocab = get_matrix_and_vocabulary(sportFiles.data)
 techMatrix, techVocab = get_matrix_and_vocabulary(techFiles.data)
 
+# Step 4: Split the dataset into 80% for training and 20% for testing.
+# For this, you must use train test split with the parameter random state set to None. (Task 1.5)
+
+X_train, X_test, y_train, y_test = train_test_split(businessMatrix, business_filenames, test_size=0.20)
