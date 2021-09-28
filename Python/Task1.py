@@ -77,15 +77,35 @@ def get_matrix_and_vocabulary(data):
 
 
 # Extract matrices
-# TODO: (optional) purify data
-allBBCMatrix, allBBCVocab = get_matrix_and_vocabulary(allBBCFiles.data)
-businessMatrix, businessVocab = get_matrix_and_vocabulary(businessFiles.data)
-entertainmentMatrix, entertainmentVocab = get_matrix_and_vocabulary(entertainmentFiles.data)
-politicsMatrix, politicsVocab = get_matrix_and_vocabulary(politicsFiles.data)
-sportMatrix, sportVocab = get_matrix_and_vocabulary(sportFiles.data)
-techMatrix, techVocab = get_matrix_and_vocabulary(techFiles.data)
+# creating X and Y for train test split (merging all directories and assigning each entry its proper label
+X = []
+Y = []
 
+businessMatrix, businessVocab = get_matrix_and_vocabulary(businessFiles.data)
+for businessVector in businessMatrix:
+    X.append(businessVector)
+    Y.append('business')
+
+entertainmentMatrix, entertainmentVocab = get_matrix_and_vocabulary(entertainmentFiles.data)
+for entertainmentVector in entertainmentMatrix:
+    X.append(entertainmentVector)
+    Y.append('entertainment')
+
+politicsMatrix, politicsVocab = get_matrix_and_vocabulary(politicsFiles.data)
+for politicsVector in politicsMatrix:
+    X.append(politicsVector)
+    Y.append('politics')
+
+sportMatrix, sportVocab = get_matrix_and_vocabulary(sportFiles.data)
+for sportVector in sportMatrix:
+    X.append(sportVector)
+    Y.append('sport')
+
+techMatrix, techVocab = get_matrix_and_vocabulary(techFiles.data)
+for techVector in techMatrix:
+    X.append(techVector)
+    Y.append('tech')
 # Step 4: Split the dataset into 80% for training and 20% for testing.
 # For this, you must use train test split with the parameter random state set to None. (Task 1.5)
 
-X_train, X_test, y_train, y_test = train_test_split(businessMatrix, business_filenames, test_size=0.20)
+X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=0.20)
