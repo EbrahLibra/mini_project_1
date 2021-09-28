@@ -2,7 +2,8 @@ import sklearn.datasets
 import pandas as pd
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.model_selection import train_test_split
-
+from sklearn.naive_bayes import MultinomialNB
+import numpy as np
 
 # Step 1: Load the corpus using load files and make sure you set the encoding to latin1. (Task 1.3)
 
@@ -108,4 +109,11 @@ for techVector in techMatrix:
 # Step 4: Split the dataset into 80% for training and 20% for testing.
 # For this, you must use train test split with the parameter random state set to None. (Task 1.5)
 
-X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=0.20)
+df_X = pd.DataFrame(X).fillna(0)
+df_y = pd.DataFrame(Y).fillna(0)
+
+X_train, X_test, y_train, y_test = train_test_split(df_X, df_y, test_size=0.20)
+
+model = MultinomialNB()
+
+model.fit(X_train,y_train)
