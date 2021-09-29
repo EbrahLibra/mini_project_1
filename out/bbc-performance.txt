@@ -1,0 +1,181 @@
+----------------------------------------------------------------------
+a)
+	********** Multi-nominalNB default values, try 1 (no smoothing) **********
+b)	Confusion Matrix:
+
+	[[101   0   1   0   1]
+    [  0  67   0   0   2]
+    [  0   0  76   0   2]
+    [  0   0   1 113   0]
+    [  0   1   0   0  80]]
+
+c-d)
+	               precision    recall  f1-score   support
+
+     business       1.00      0.98      0.99       103
+entertainment       0.99      0.97      0.98        69
+     politics       0.97      0.97      0.97        78
+        sport       1.00      0.99      1.00       114
+         tech       0.94      0.99      0.96        81
+
+     accuracy                           0.98       445
+    macro avg       0.98      0.98      0.98       445
+ weighted avg       0.98      0.98      0.98       445
+
+e)	The prior probability of each class:
+
+	business:	0.23
+	entertainment:	0.17
+	politics:	0.19
+	sport:	0.23
+	tech:	0.18
+
+f)	The size of the vocabulary:	29421
+
+g)
+	The number of word-tokens in business:				164663
+	The number of word-tokens in entertainment:			124893
+	The number of word-tokens in politics:				185208
+	The number of word-tokens in sport:					162953
+	The number of word-tokens in tech:					198640
+														------
+h)	The number of word-tokens in the entire corpus:		836357
+k)	My favourite words are
+		"french" with log-prob:			-43.879733968433975
+		"freedom" with log-prob:		-51.69643028501243
+----------------------------------------------------------------------
+a)
+	********** Multi-nominalNB default values, try 2 (no smoothing) **********
+b)	Confusion Matrix:
+
+	[[107   0   3   0   3]
+    [  0  76   1   0   0]
+    [  0   0  88   0   0]
+    [  0   0   0  86   0]
+    [  0   1   0   0  80]]
+
+c-d)
+	               precision    recall  f1-score   support
+
+     business       1.00      0.95      0.97       113
+entertainment       0.99      0.99      0.99        77
+     politics       0.96      1.00      0.98        88
+        sport       1.00      1.00      1.00        86
+         tech       0.96      0.99      0.98        81
+
+     accuracy                           0.98       445
+    macro avg       0.98      0.98      0.98       445
+ weighted avg       0.98      0.98      0.98       445
+
+e)	The prior probability of each class:
+
+	business:	0.23
+	entertainment:	0.17
+	politics:	0.19
+	sport:	0.23
+	tech:	0.18
+
+f)	The size of the vocabulary:	29421
+
+g)
+	The number of word-tokens in business:				164663
+	The number of word-tokens in entertainment:			124893
+	The number of word-tokens in politics:				185208
+	The number of word-tokens in sport:					162953
+	The number of word-tokens in tech:					198640
+														------
+h)	The number of word-tokens in the entire corpus:		836357
+k)	My favourite words are
+		"french" with log-prob:			-44.1143325425726
+		"freedom" with log-prob:		-51.02927489551674
+----------------------------------------------------------------------
+a)
+	********** Multi-nominalNB default values, try 3 (smoothing=0.0001) **********
+b)	Confusion Matrix:
+
+	[[93  0  0  0  1]
+    [ 0 76  3  0  2]
+    [ 2  0 87  0  1]
+    [ 0  0  0 95  0]
+    [ 2  0  0  0 83]]
+
+c-d)
+	               precision    recall  f1-score   support
+
+     business       0.96      0.99      0.97        94
+entertainment       1.00      0.94      0.97        81
+     politics       0.97      0.97      0.97        90
+        sport       1.00      1.00      1.00        95
+         tech       0.95      0.98      0.97        85
+
+     accuracy                           0.98       445
+    macro avg       0.98      0.97      0.97       445
+ weighted avg       0.98      0.98      0.98       445
+
+e)	The prior probability of each class:
+
+	business:	0.23
+	entertainment:	0.17
+	politics:	0.19
+	sport:	0.23
+	tech:	0.18
+
+f)	The size of the vocabulary:	29421
+
+g)
+	The number of word-tokens in business:				164663
+	The number of word-tokens in entertainment:			124893
+	The number of word-tokens in politics:				185208
+	The number of word-tokens in sport:					162953
+	The number of word-tokens in tech:					198640
+														------
+h)	The number of word-tokens in the entire corpus:		836357
+k)	My favourite words are
+		"french" with log-prob:			-43.05621583628068
+		"freedom" with log-prob:		-50.90831739313073
+
+----------------------------------------------------------------------
+a)
+	********** Multi-nominalNB default values, try 4 (smoothing=0.9)**********
+b)	Confusion Matrix:
+
+	[[ 99   1   1   0   0]
+    [  0  74   1   0   0]
+    [  2   0  79   0   0]
+    [  0   0   0 106   0]
+    [  0   1   4   0  77]]
+
+c-d)
+	               precision    recall  f1-score   support
+
+     business       0.98      0.98      0.98       101
+entertainment       0.97      0.99      0.98        75
+     politics       0.93      0.98      0.95        81
+        sport       1.00      1.00      1.00       106
+         tech       1.00      0.94      0.97        82
+
+     accuracy                           0.98       445
+    macro avg       0.98      0.98      0.98       445
+ weighted avg       0.98      0.98      0.98       445
+
+e)	The prior probability of each class:
+
+	business:	0.23
+	entertainment:	0.17
+	politics:	0.19
+	sport:	0.23
+	tech:	0.18
+
+f)	The size of the vocabulary:	29421
+
+g)
+	The number of word-tokens in business:				164663
+	The number of word-tokens in entertainment:			124893
+	The number of word-tokens in politics:				185208
+	The number of word-tokens in sport:					162953
+	The number of word-tokens in tech:					198640
+														------
+h)	The number of word-tokens in the entire corpus:		836357
+k)	My favourite words are
+		"french" with log-prob:			-44.12509020527704
+		"freedom" with log-prob:		-51.291876405371106
