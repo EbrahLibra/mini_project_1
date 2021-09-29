@@ -1,0 +1,22 @@
+a) MultinomialNB(alpha=1.0, class_prior=None, fit_prior=True)
+
+b)     [109,   0,   0,   0,   0],
+       [  0,  75,   0,   0,   0],
+       [  0,   0,  87,   0,   0],
+       [  0,   0,   0, 102,   0],
+       [  0,   0,   0,   0,  72]
+
+c)                precision    recall  f1-score   support
+
+     business       1.00      1.00      1.00       101
+entertainment       1.00      1.00      1.00        75
+     politics       1.00      1.00      1.00        78
+        sport       1.00      1.00      1.00       121
+         tech       1.00      1.00      1.00        70
+
+     accuracy                           1.00       445
+    macro avg       1.00      1.00      1.00       445
+ weighted avg       1.00      1.00      1.00       445
+ 
+ 
+ 

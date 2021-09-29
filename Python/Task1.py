@@ -3,6 +3,8 @@ import pandas as pd
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import MultinomialNB
+from sklearn.metrics import classification_report
+from sklearn import metrics
 import numpy as np
 
 # Step 1: Load the corpus using load files and make sure you set the encoding to latin1. (Task 1.3)
@@ -116,4 +118,16 @@ X_train, X_test, y_train, y_test = train_test_split(df_X, df_y, test_size=0.20)
 
 model = MultinomialNB()
 
+# training
 model.fit(X_train,y_train)
+
+# predictions
+predictions = model.predict(X_test)
+
+
+# report
+metrics.confusion_matrix(y_test, predictions)
+
+report = classification_report(y_test, predictions, target_names=['business', 'entertainment', 'politics', 'sport', 'tech'])
+
+print(report)
