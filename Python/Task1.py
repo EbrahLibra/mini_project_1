@@ -81,7 +81,7 @@ def get_matrix_and_vocabulary(data):
 # Extract matrices
 # creating X and Y for train test split (merging all directories and assigning each entry its proper label
 
-allBBC_Matrix, allBBC_Vocab = get_matrix_and_vocabulary(allBBCFiles.data)
+allBBCMatrix, allBBCVocab = get_matrix_and_vocabulary(allBBCFiles.data)
 businessMatrix, businessVocab = get_matrix_and_vocabulary(businessFiles.data)
 entertainmentMatrix, entertainmentVocab = get_matrix_and_vocabulary(entertainmentFiles.data)
 politicsMatrix, politicsVocab = get_matrix_and_vocabulary(politicsFiles.data)
@@ -91,13 +91,12 @@ techMatrix, techVocab = get_matrix_and_vocabulary(techFiles.data)
 # Step 4: Split the dataset into 80% for training and 20% for testing.
 # For this, you must use train test split with the parameter random state set to None. (Task 1.5)
 
-X_train, X_test, y_train, y_test = train_test_split(allBBC_Matrix, allBBCFiles.target, test_size=0.20)
+X_train, X_test, y_train, y_test = train_test_split(allBBCMatrix, allBBCFiles.target, test_size=0.20)
 
 # # Step 5: Train a multinomial Naive Bayes Classifier (naive bayes.MultinomialNB) on the training set using
 # # the default parameters and evaluate it on the test set. (Task 1.6)
 
 # # Prepare the classifier
-i = len(allBBCFiles.target_names)
 model = MultinomialNB(class_prior=[
     businessDataSize / allBBCDataSize,
     entertainmentDataSize / allBBCDataSize,
@@ -127,7 +126,7 @@ with open('../out/bbc-performance.txt', 'a') as f:
     f.write('e)\tThe prior probability of each class:\n')
     for i, pp in enumerate(model.class_prior):
         f.write('\n\t' + allBBCFiles.target_names[i] + ':\t{0:1.2}'.format(pp))
-    f.write('\n\nf)\tThe size of the vocabulary:\t{0}\n'.format(len(allBBC_Vocab)))
+    f.write('\n\nf)\tThe size of the vocabulary:\t{0}\n'.format(len(allBBCVocab)))
     f.write('\ng)')
     f.write('\n\tThe number of word-tokens in business:\t\t\t\t{0}'.format(businessMatrix.sum()))
     f.write('\n\tThe number of word-tokens in entertainment:\t\t\t{0}'.format(entertainmentMatrix.sum()))
@@ -135,7 +134,7 @@ with open('../out/bbc-performance.txt', 'a') as f:
     f.write('\n\tThe number of word-tokens in sport:\t\t\t\t\t{0}'.format(sportMatrix.sum()))
     f.write('\n\tThe number of word-tokens in tech:\t\t\t\t\t{0}'.format(techMatrix.sum()))
     f.write('\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t------')
-    f.write('\nh)\tThe number of word-tokens in the entire corpus:\t\t{0}'.format(allBBC_Matrix.sum()))
+    f.write('\nh)\tThe number of word-tokens in the entire corpus:\t\t{0}'.format(allBBCMatrix.sum()))
     f.write('\nk)\tMy favourite words are')
-    f.write('\n\t\t"french" with log-prob:\t\t\t{0}'.format(model.feature_log_prob_[:, allBBC_Vocab['french']].sum()))
-    f.write('\n\t\t"freedom" with log-prob:\t\t{0}'.format(model.feature_log_prob_[:, allBBC_Vocab['freedom']].sum()))
+    f.write('\n\t\t"french" with log-prob:\t\t\t{0}'.format(model.feature_log_prob_[:, allBBCVocab['french']].sum()))
+    f.write('\n\t\t"freedom" with log-prob:\t\t{0}'.format(model.feature_log_prob_[:, allBBCVocab['freedom']].sum()))
