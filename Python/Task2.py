@@ -63,7 +63,7 @@ per = Perceptron()
 per_prediction = per.fit(X_train, y_train).predict(X_test)
 predictions.update({'Perceptron Classifier': per_prediction})
 # 6 e)
-base_mlp = MLPClassifier(activation='logistic', hidden_layer_sizes=100, solver='sgd')
+base_mlp = MLPClassifier(activation='logistic', hidden_layer_sizes=100, solver='sgd', max_iter=2500)
 
 base_mlp_prediction = base_mlp.fit(X_train, y_train).predict(X_test)
 predictions.update({'Multi-Layered Perceptron (Base-MLP) Classifier': (base_mlp.get_params(False), base_mlp_prediction)})
@@ -78,7 +78,7 @@ def generate_multi_layered_predictions(afs, ss, hls_s):
     for af in afs:
         for s in ss:
             for hls in hls_s:
-                mlp_classifier = MLPClassifier(activation=af, hidden_layer_sizes=hls, solver=s)
+                mlp_classifier = MLPClassifier(activation=af, hidden_layer_sizes=hls, solver=s, max_iter=4000)
                 predictions.update(
                     {
                         str(mlp_classifier.get_params(False)): mlp_classifier.fit(X_train, y_train).predict(X_test)
@@ -98,18 +98,18 @@ def generate_drug_performance(a, ps):
             f.write('\n ' + chr(i + 97) + ') ' + k)
             if k != 'Multi-Layered Perceptron (Top-MLP) Classifier' and k != 'Multi-Layered Perceptron (Base-MLP) Classifier':
                 f.write('\n\t 1) Confusion matrix:\n\n\t' + np.array2string(confusion_matrix(y_test, p), prefix='\t\t\t'))
-                f.write('\n\t 2) Confusion matrix:\n\n' + classification_report(y_test, p))
+                f.write('\n\t 2) Confusion matrix:\n\n' + classification_report(y_test, p, zero_division=0))
             elif k == 'Multi-Layered Perceptron (Base-MLP) Classifier':
                 f.write('\nHyper-parameters:\n\t' + str(p[0]))
                 f.write('\n\t 1)\tConfusion matrix:\n\n\t' + np.array2string(confusion_matrix(y_test, p[1]), prefix='\t\t\t'))
-                f.write('\n\t 2)\tConfusion matrix:\n\n' + classification_report(y_test, p[1]))
+                f.write('\n\t 2)\tConfusion matrix:\n\n' + classification_report(y_test, p[1], zero_division=0))
             else:
                 f.write('\n')
                 for i, (p1, p2) in enumerate(p.items()):
                     f.write('\n' + '*' * 10 + ' Top-MLP (' + str(i + 1) + ') ' + '*' * 10)
                     f.write('\n\tHyper-parameters:\n\t' + p1)
                     f.write('\n\t 1)\tConfusion matrix:\n\n\t' + np.array2string(confusion_matrix(y_test, p2), prefix='\t\t\t'))
-                    f.write('\n\t 2)\tConfusion matrix:\n\n' + classification_report(y_test, p2))
+                    f.write('\n\t 2)\tConfusion matrix:\n\n' + classification_report(y_test, p2, zero_division=0))
 
 
 generate_drug_performance(1, predictions)

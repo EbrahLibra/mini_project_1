@@ -1,6 +1,22 @@
 8.
 Discussion
 
-Some models performs do not perform the same from one run to the next. However, some do. Probabilistic models like Naive Bayes and Decision Tree will perform the same. For these models, two runs using the same hyper-parameters will yield the same predictions. The probabilities extracted from the data which lead to predictions will not change. One set of probabilities includes the proportion of a given classe over the total number of instances. Another, is the probability of the occurence of a feature given a particular classification. In the case of a Decision Tree Classifier, these internal probabilities are used in order to calculate the entropy of the dataset from one branch to the next.
+    Some models perform do not perform the same from one run to the next.
+    However, some do. Probabilistic models like Naive Bayes and Decision Tree will perform the same.
+    For these models, two runs using the same hyper-parameters will yield the same predictions.
+    The probabilities extracted from the data which lead to predictions will not change.
+    One set of probabilities includes the proportion of a given class over the total number of instances.
+    Another, is the probability of the occurrence of a feature given a particular classification.
+    In the case of a Decision Tree Classifier, these internal probabilities are used in order to calculate
+    the entropy of the dataset from one branch to the next.
 
-Contrary to this, the Perceptron Classifier and the Multi-Layered Perceptron will produce marginally different results from one run to the next given the same set of hyper-parameters. This is due to the presence of randomness in building the initial state. These classifiers are composed of hyper-parameters, which are external to the model, and parameters, which are internal. The parameters take the form of weights that connect input to output in the case of the simple Perceptron and one node to the next in the case of the Multi-Layered Perceptron. Understandably, the output produced by both model relies heavily on having these parameters as close to their correct values as possible. Initially, randomness comes in when deciding initial values for the weights, which are then adjusted as data is fed through the model. Assigning different initial values to these weights may yield different minimizations of the error function, which may have many local minimas. This is the reason that performance will vary for these models from one run to the next.
+    Contrary to this, the Perceptron Classifier and the Multi-Layered Perceptron will produce marginally different
+    results from one run to the next given the same set of hyper-parameters. This is due to the presence of randomness
+    in building the initial state.These classifiers are composed of hyper-parameters, which are external to the model,
+    and parameters, which are internal. The parameters take the form of weights that connect input to output in the case
+    of the simple Perceptron and one node to the next in the case of the Multi-Layered Perceptron. Understandably,
+    the output produced by both model relies heavily on having these parameters as close to their correct values as possible.
+    Initially, randomness comes in when deciding initial values for the weights, which are then adjusted as data is fed
+    through the model. Assigning different initial values to these weights may yield different minimization of
+    the error function, which may have many local minimal. This is the reason that performance will vary for these
+    models from one run to the next.
