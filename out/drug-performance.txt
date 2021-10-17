@@ -1,44 +1,44 @@
 
-******************************Try 2******************************
+******************************Try 1******************************
  a) Gaussian Naive Bayes Classifier
 	 1) Confusion matrix:
 
-	[[ 5  0  0  0  0]
+	[[ 4  0  0  0  0]
     [ 0  4  0  0  0]
     [ 0  0  3  0  0]
-    [ 0  0  0  9  0]
-    [ 1  1  3  0 14]]
+    [ 0  0  0 10  1]
+    [ 2  1  1  0 14]]
 	 2) Confusion matrix:
 
               precision    recall  f1-score   support
 
-       drugA       0.83      1.00      0.91         5
+       drugA       0.67      1.00      0.80         4
        drugB       0.80      1.00      0.89         4
-       drugC       0.50      1.00      0.67         3
-       drugX       1.00      1.00      1.00         9
-       drugY       1.00      0.74      0.85        19
+       drugC       0.75      1.00      0.86         3
+       drugX       1.00      0.91      0.95        11
+       drugY       0.93      0.78      0.85        18
 
     accuracy                           0.88        40
-   macro avg       0.83      0.95      0.86        40
-weighted avg       0.92      0.88      0.88        40
+   macro avg       0.83      0.94      0.87        40
+weighted avg       0.90      0.88      0.88        40
 
  b) Decision Tree Classifier
 	 1) Confusion matrix:
 
-	[[ 5  0  0  0  0]
+	[[ 4  0  0  0  0]
     [ 0  4  0  0  0]
     [ 0  0  3  0  0]
-    [ 0  0  0  9  0]
-    [ 0  0  0  0 19]]
+    [ 0  0  0 11  0]
+    [ 0  0  0  0 18]]
 	 2) Confusion matrix:
 
               precision    recall  f1-score   support
 
-       drugA       1.00      1.00      1.00         5
+       drugA       1.00      1.00      1.00         4
        drugB       1.00      1.00      1.00         4
        drugC       1.00      1.00      1.00         3
-       drugX       1.00      1.00      1.00         9
-       drugY       1.00      1.00      1.00        19
+       drugX       1.00      1.00      1.00        11
+       drugY       1.00      1.00      1.00        18
 
     accuracy                           1.00        40
    macro avg       1.00      1.00      1.00        40
@@ -47,20 +47,20 @@ weighted avg       1.00      1.00      1.00        40
  c) GridSearchCV Classifier
 	 1) Confusion matrix:
 
-	[[ 5  0  0  0  0]
+	[[ 4  0  0  0  0]
     [ 0  4  0  0  0]
     [ 0  0  3  0  0]
-    [ 0  0  0  9  0]
-    [ 0  0  0  0 19]]
+    [ 0  0  0 11  0]
+    [ 0  0  0  0 18]]
 	 2) Confusion matrix:
 
               precision    recall  f1-score   support
 
-       drugA       1.00      1.00      1.00         5
+       drugA       1.00      1.00      1.00         4
        drugB       1.00      1.00      1.00         4
        drugC       1.00      1.00      1.00         3
-       drugX       1.00      1.00      1.00         9
-       drugY       1.00      1.00      1.00        19
+       drugX       1.00      1.00      1.00        11
+       drugY       1.00      1.00      1.00        18
 
     accuracy                           1.00        40
    macro avg       1.00      1.00      1.00        40
@@ -69,48 +69,48 @@ weighted avg       1.00      1.00      1.00        40
  d) Perceptron Classifier
 	 1) Confusion matrix:
 
-	[[ 0  0  0  2  3]
-    [ 0  0  0  4  0]
-    [ 0  0  0  3  0]
-    [ 0  0  0  4  5]
-    [ 0  0  0  3 16]]
+	[[ 1  0  0  0  3]
+    [ 3  0  0  0  1]
+    [ 0  1  0  0  2]
+    [ 2  3  0  0  6]
+    [ 0  0  0  0 18]]
 	 2) Confusion matrix:
 
               precision    recall  f1-score   support
 
-       drugA       0.00      0.00      0.00         5
+       drugA       0.17      0.25      0.20         4
        drugB       0.00      0.00      0.00         4
        drugC       0.00      0.00      0.00         3
-       drugX       0.25      0.44      0.32         9
-       drugY       0.67      0.84      0.74        19
+       drugX       0.00      0.00      0.00        11
+       drugY       0.60      1.00      0.75        18
 
-    accuracy                           0.50        40
-   macro avg       0.18      0.26      0.21        40
-weighted avg       0.37      0.50      0.43        40
+    accuracy                           0.48        40
+   macro avg       0.15      0.25      0.19        40
+weighted avg       0.29      0.47      0.36        40
 
  e) Multi-Layered Perceptron (Base-MLP) Classifier
 Hyper-parameters:
 	{'activation': 'logistic', 'alpha': 0.0001, 'batch_size': 'auto', 'beta_1': 0.9, 'beta_2': 0.999, 'early_stopping': False, 'epsilon': 1e-08, 'hidden_layer_sizes': 100, 'learning_rate': 'constant', 'learning_rate_init': 0.001, 'max_fun': 15000, 'max_iter': 2500, 'momentum': 0.9, 'n_iter_no_change': 10, 'nesterovs_momentum': True, 'power_t': 0.5, 'random_state': None, 'shuffle': True, 'solver': 'sgd', 'tol': 0.0001, 'validation_fraction': 0.1, 'verbose': False, 'warm_start': False}
 	 1)	Confusion matrix:
 
-	[[ 0  0  0  3  2]
+	[[ 0  0  0  2  2]
     [ 0  0  0  4  0]
     [ 0  0  0  3  0]
-    [ 0  0  0  7  2]
-    [ 0  0  0  3 16]]
+    [ 0  0  0  8  3]
+    [ 0  0  0  1 17]]
 	 2)	Confusion matrix:
 
               precision    recall  f1-score   support
 
-       drugA       0.00      0.00      0.00         5
+       drugA       0.00      0.00      0.00         4
        drugB       0.00      0.00      0.00         4
        drugC       0.00      0.00      0.00         3
-       drugX       0.35      0.78      0.48         9
-       drugY       0.80      0.84      0.82        19
+       drugX       0.44      0.73      0.55        11
+       drugY       0.77      0.94      0.85        18
 
-    accuracy                           0.57        40
-   macro avg       0.23      0.32      0.26        40
-weighted avg       0.46      0.57      0.50        40
+    accuracy                           0.62        40
+   macro avg       0.24      0.33      0.28        40
+weighted avg       0.47      0.62      0.53        40
 
  f) Multi-Layered Perceptron (Top-MLP) Classifier
 
@@ -119,381 +119,880 @@ weighted avg       0.46      0.57      0.50        40
 	{'activation': 'identity', 'alpha': 0.0001, 'batch_size': 'auto', 'beta_1': 0.9, 'beta_2': 0.999, 'early_stopping': False, 'epsilon': 1e-08, 'hidden_layer_sizes': (30, 50), 'learning_rate': 'constant', 'learning_rate_init': 0.001, 'max_fun': 15000, 'max_iter': 4000, 'momentum': 0.9, 'n_iter_no_change': 10, 'nesterovs_momentum': True, 'power_t': 0.5, 'random_state': None, 'shuffle': True, 'solver': 'sgd', 'tol': 0.0001, 'validation_fraction': 0.1, 'verbose': False, 'warm_start': False}
 	 1)	Confusion matrix:
 
-	[[ 5  0  0  0  0]
-    [ 1  3  0  0  0]
-    [ 0  0  1  2  0]
-    [ 1  1  0  1  6]
-    [ 0  0  0  0 19]]
+	[[ 4  0  0  0  0]
+    [ 0  0  0  4  0]
+    [ 0  0  3  0  0]
+    [ 0  0  0 11  0]
+    [ 0  0  0  2 16]]
 	 2)	Confusion matrix:
 
               precision    recall  f1-score   support
 
-       drugA       0.71      1.00      0.83         5
-       drugB       0.75      0.75      0.75         4
-       drugC       1.00      0.33      0.50         3
-       drugX       0.33      0.11      0.17         9
-       drugY       0.76      1.00      0.86        19
+       drugA       1.00      1.00      1.00         4
+       drugB       0.00      0.00      0.00         4
+       drugC       1.00      1.00      1.00         3
+       drugX       0.65      1.00      0.79        11
+       drugY       1.00      0.89      0.94        18
 
-    accuracy                           0.73        40
-   macro avg       0.71      0.64      0.62        40
-weighted avg       0.68      0.72      0.66        40
+    accuracy                           0.85        40
+   macro avg       0.73      0.78      0.75        40
+weighted avg       0.80      0.85      0.81        40
 
 ********** Top-MLP (2) **********
 	Hyper-parameters:
 	{'activation': 'identity', 'alpha': 0.0001, 'batch_size': 'auto', 'beta_1': 0.9, 'beta_2': 0.999, 'early_stopping': False, 'epsilon': 1e-08, 'hidden_layer_sizes': (10, 10, 10), 'learning_rate': 'constant', 'learning_rate_init': 0.001, 'max_fun': 15000, 'max_iter': 4000, 'momentum': 0.9, 'n_iter_no_change': 10, 'nesterovs_momentum': True, 'power_t': 0.5, 'random_state': None, 'shuffle': True, 'solver': 'sgd', 'tol': 0.0001, 'validation_fraction': 0.1, 'verbose': False, 'warm_start': False}
 	 1)	Confusion matrix:
 
-	[[ 5  0  0  0  0]
+	[[ 1  0  0  3  0]
     [ 0  0  0  4  0]
     [ 0  0  3  0  0]
-    [ 0  0  0  9  0]
-    [ 0  0  2  2 15]]
+    [ 0  0  0 11  0]
+    [ 0  0  0  2 16]]
 	 2)	Confusion matrix:
 
               precision    recall  f1-score   support
 
-       drugA       1.00      1.00      1.00         5
+       drugA       1.00      0.25      0.40         4
        drugB       0.00      0.00      0.00         4
-       drugC       0.60      1.00      0.75         3
-       drugX       0.60      1.00      0.75         9
-       drugY       1.00      0.79      0.88        19
+       drugC       1.00      1.00      1.00         3
+       drugX       0.55      1.00      0.71        11
+       drugY       1.00      0.89      0.94        18
 
-    accuracy                           0.80        40
-   macro avg       0.64      0.76      0.68        40
-weighted avg       0.78      0.80      0.77        40
+    accuracy                           0.78        40
+   macro avg       0.71      0.63      0.61        40
+weighted avg       0.78      0.78      0.73        40
 
 ********** Top-MLP (3) **********
 	Hyper-parameters:
 	{'activation': 'identity', 'alpha': 0.0001, 'batch_size': 'auto', 'beta_1': 0.9, 'beta_2': 0.999, 'early_stopping': False, 'epsilon': 1e-08, 'hidden_layer_sizes': (30, 50), 'learning_rate': 'constant', 'learning_rate_init': 0.001, 'max_fun': 15000, 'max_iter': 4000, 'momentum': 0.9, 'n_iter_no_change': 10, 'nesterovs_momentum': True, 'power_t': 0.5, 'random_state': None, 'shuffle': True, 'solver': 'adam', 'tol': 0.0001, 'validation_fraction': 0.1, 'verbose': False, 'warm_start': False}
 	 1)	Confusion matrix:
 
-	[[ 0  0  0  0  5]
-    [ 0  2  0  1  1]
-    [ 0  1  0  0  2]
-    [ 0  1  0  1  7]
-    [ 0  0  0  1 18]]
+	[[ 4  0  0  0  0]
+    [ 0  4  0  0  0]
+    [ 0  0  3  0  0]
+    [ 0  0  0 10  1]
+    [ 0  0  0  0 18]]
 	 2)	Confusion matrix:
 
               precision    recall  f1-score   support
 
-       drugA       0.00      0.00      0.00         5
-       drugB       0.50      0.50      0.50         4
-       drugC       0.00      0.00      0.00         3
-       drugX       0.33      0.11      0.17         9
-       drugY       0.55      0.95      0.69        19
+       drugA       1.00      1.00      1.00         4
+       drugB       1.00      1.00      1.00         4
+       drugC       1.00      1.00      1.00         3
+       drugX       1.00      0.91      0.95        11
+       drugY       0.95      1.00      0.97        18
 
-    accuracy                           0.53        40
-   macro avg       0.28      0.31      0.27        40
-weighted avg       0.38      0.53      0.42        40
+    accuracy                           0.97        40
+   macro avg       0.99      0.98      0.99        40
+weighted avg       0.98      0.97      0.97        40
 
 ********** Top-MLP (4) **********
 	Hyper-parameters:
 	{'activation': 'identity', 'alpha': 0.0001, 'batch_size': 'auto', 'beta_1': 0.9, 'beta_2': 0.999, 'early_stopping': False, 'epsilon': 1e-08, 'hidden_layer_sizes': (10, 10, 10), 'learning_rate': 'constant', 'learning_rate_init': 0.001, 'max_fun': 15000, 'max_iter': 4000, 'momentum': 0.9, 'n_iter_no_change': 10, 'nesterovs_momentum': True, 'power_t': 0.5, 'random_state': None, 'shuffle': True, 'solver': 'adam', 'tol': 0.0001, 'validation_fraction': 0.1, 'verbose': False, 'warm_start': False}
 	 1)	Confusion matrix:
 
-	[[ 0  0  0  1  4]
-    [ 0  0  4  0  0]
-    [ 0  0  1  0  2]
-    [ 0  0  1  1  7]
-    [ 0  0  1  0 18]]
+	[[ 4  0  0  0  0]
+    [ 0  4  0  0  0]
+    [ 0  0  3  0  0]
+    [ 0  0  0 10  1]
+    [ 0  0  0  0 18]]
 	 2)	Confusion matrix:
 
               precision    recall  f1-score   support
 
-       drugA       0.00      0.00      0.00         5
-       drugB       0.00      0.00      0.00         4
-       drugC       0.14      0.33      0.20         3
-       drugX       0.50      0.11      0.18         9
-       drugY       0.58      0.95      0.72        19
+       drugA       1.00      1.00      1.00         4
+       drugB       1.00      1.00      1.00         4
+       drugC       1.00      1.00      1.00         3
+       drugX       1.00      0.91      0.95        11
+       drugY       0.95      1.00      0.97        18
 
-    accuracy                           0.50        40
-   macro avg       0.24      0.28      0.22        40
-weighted avg       0.40      0.50      0.40        40
+    accuracy                           0.97        40
+   macro avg       0.99      0.98      0.99        40
+weighted avg       0.98      0.97      0.97        40
 
 ********** Top-MLP (5) **********
 	Hyper-parameters:
 	{'activation': 'logistic', 'alpha': 0.0001, 'batch_size': 'auto', 'beta_1': 0.9, 'beta_2': 0.999, 'early_stopping': False, 'epsilon': 1e-08, 'hidden_layer_sizes': (30, 50), 'learning_rate': 'constant', 'learning_rate_init': 0.001, 'max_fun': 15000, 'max_iter': 4000, 'momentum': 0.9, 'n_iter_no_change': 10, 'nesterovs_momentum': True, 'power_t': 0.5, 'random_state': None, 'shuffle': True, 'solver': 'sgd', 'tol': 0.0001, 'validation_fraction': 0.1, 'verbose': False, 'warm_start': False}
 	 1)	Confusion matrix:
 
-	[[ 0  0  0  0  5]
+	[[ 0  0  0  0  4]
     [ 0  0  0  0  4]
     [ 0  0  0  0  3]
-    [ 0  0  0  0  9]
-    [ 0  0  0  0 19]]
+    [ 0  0  0  0 11]
+    [ 0  0  0  0 18]]
 	 2)	Confusion matrix:
 
               precision    recall  f1-score   support
 
-       drugA       0.00      0.00      0.00         5
+       drugA       0.00      0.00      0.00         4
        drugB       0.00      0.00      0.00         4
        drugC       0.00      0.00      0.00         3
-       drugX       0.00      0.00      0.00         9
-       drugY       0.47      1.00      0.64        19
+       drugX       0.00      0.00      0.00        11
+       drugY       0.45      1.00      0.62        18
 
-    accuracy                           0.48        40
-   macro avg       0.10      0.20      0.13        40
-weighted avg       0.23      0.47      0.31        40
+    accuracy                           0.45        40
+   macro avg       0.09      0.20      0.12        40
+weighted avg       0.20      0.45      0.28        40
 
 ********** Top-MLP (6) **********
 	Hyper-parameters:
 	{'activation': 'logistic', 'alpha': 0.0001, 'batch_size': 'auto', 'beta_1': 0.9, 'beta_2': 0.999, 'early_stopping': False, 'epsilon': 1e-08, 'hidden_layer_sizes': (10, 10, 10), 'learning_rate': 'constant', 'learning_rate_init': 0.001, 'max_fun': 15000, 'max_iter': 4000, 'momentum': 0.9, 'n_iter_no_change': 10, 'nesterovs_momentum': True, 'power_t': 0.5, 'random_state': None, 'shuffle': True, 'solver': 'sgd', 'tol': 0.0001, 'validation_fraction': 0.1, 'verbose': False, 'warm_start': False}
 	 1)	Confusion matrix:
 
-	[[ 0  0  0  0  5]
+	[[ 0  0  0  0  4]
     [ 0  0  0  0  4]
     [ 0  0  0  0  3]
-    [ 0  0  0  0  9]
-    [ 0  0  0  0 19]]
+    [ 0  0  0  0 11]
+    [ 0  0  0  0 18]]
 	 2)	Confusion matrix:
 
               precision    recall  f1-score   support
 
-       drugA       0.00      0.00      0.00         5
+       drugA       0.00      0.00      0.00         4
        drugB       0.00      0.00      0.00         4
        drugC       0.00      0.00      0.00         3
-       drugX       0.00      0.00      0.00         9
-       drugY       0.47      1.00      0.64        19
+       drugX       0.00      0.00      0.00        11
+       drugY       0.45      1.00      0.62        18
 
-    accuracy                           0.48        40
-   macro avg       0.10      0.20      0.13        40
-weighted avg       0.23      0.47      0.31        40
+    accuracy                           0.45        40
+   macro avg       0.09      0.20      0.12        40
+weighted avg       0.20      0.45      0.28        40
 
 ********** Top-MLP (7) **********
 	Hyper-parameters:
 	{'activation': 'logistic', 'alpha': 0.0001, 'batch_size': 'auto', 'beta_1': 0.9, 'beta_2': 0.999, 'early_stopping': False, 'epsilon': 1e-08, 'hidden_layer_sizes': (30, 50), 'learning_rate': 'constant', 'learning_rate_init': 0.001, 'max_fun': 15000, 'max_iter': 4000, 'momentum': 0.9, 'n_iter_no_change': 10, 'nesterovs_momentum': True, 'power_t': 0.5, 'random_state': None, 'shuffle': True, 'solver': 'adam', 'tol': 0.0001, 'validation_fraction': 0.1, 'verbose': False, 'warm_start': False}
 	 1)	Confusion matrix:
 
-	[[ 5  0  0  0  0]
+	[[ 4  0  0  0  0]
     [ 0  4  0  0  0]
     [ 0  0  3  0  0]
-    [ 0  0  0  9  0]
-    [ 0  1  1  1 16]]
+    [ 0  0  0 10  1]
+    [ 0  0  0  0 18]]
 	 2)	Confusion matrix:
 
               precision    recall  f1-score   support
 
-       drugA       1.00      1.00      1.00         5
-       drugB       0.80      1.00      0.89         4
-       drugC       0.75      1.00      0.86         3
-       drugX       0.90      1.00      0.95         9
-       drugY       1.00      0.84      0.91        19
+       drugA       1.00      1.00      1.00         4
+       drugB       1.00      1.00      1.00         4
+       drugC       1.00      1.00      1.00         3
+       drugX       1.00      0.91      0.95        11
+       drugY       0.95      1.00      0.97        18
 
-    accuracy                           0.93        40
-   macro avg       0.89      0.97      0.92        40
-weighted avg       0.94      0.93      0.93        40
+    accuracy                           0.97        40
+   macro avg       0.99      0.98      0.99        40
+weighted avg       0.98      0.97      0.97        40
 
 ********** Top-MLP (8) **********
 	Hyper-parameters:
 	{'activation': 'logistic', 'alpha': 0.0001, 'batch_size': 'auto', 'beta_1': 0.9, 'beta_2': 0.999, 'early_stopping': False, 'epsilon': 1e-08, 'hidden_layer_sizes': (10, 10, 10), 'learning_rate': 'constant', 'learning_rate_init': 0.001, 'max_fun': 15000, 'max_iter': 4000, 'momentum': 0.9, 'n_iter_no_change': 10, 'nesterovs_momentum': True, 'power_t': 0.5, 'random_state': None, 'shuffle': True, 'solver': 'adam', 'tol': 0.0001, 'validation_fraction': 0.1, 'verbose': False, 'warm_start': False}
 	 1)	Confusion matrix:
 
-	[[ 4  1  0  0  0]
+	[[ 4  0  0  0  0]
     [ 0  4  0  0  0]
-    [ 0  0  2  1  0]
-    [ 0  0  0  9  0]
-    [ 0  1  0  0 18]]
+    [ 0  0  3  0  0]
+    [ 0  0  1 10  0]
+    [ 0  0  0  0 18]]
 	 2)	Confusion matrix:
 
               precision    recall  f1-score   support
 
-       drugA       1.00      0.80      0.89         5
-       drugB       0.67      1.00      0.80         4
-       drugC       1.00      0.67      0.80         3
-       drugX       0.90      1.00      0.95         9
-       drugY       1.00      0.95      0.97        19
+       drugA       1.00      1.00      1.00         4
+       drugB       1.00      1.00      1.00         4
+       drugC       0.75      1.00      0.86         3
+       drugX       1.00      0.91      0.95        11
+       drugY       1.00      1.00      1.00        18
 
-    accuracy                           0.93        40
-   macro avg       0.91      0.88      0.88        40
-weighted avg       0.94      0.93      0.93        40
+    accuracy                           0.97        40
+   macro avg       0.95      0.98      0.96        40
+weighted avg       0.98      0.97      0.98        40
 
 ********** Top-MLP (9) **********
 	Hyper-parameters:
 	{'activation': 'relu', 'alpha': 0.0001, 'batch_size': 'auto', 'beta_1': 0.9, 'beta_2': 0.999, 'early_stopping': False, 'epsilon': 1e-08, 'hidden_layer_sizes': (30, 50), 'learning_rate': 'constant', 'learning_rate_init': 0.001, 'max_fun': 15000, 'max_iter': 4000, 'momentum': 0.9, 'n_iter_no_change': 10, 'nesterovs_momentum': True, 'power_t': 0.5, 'random_state': None, 'shuffle': True, 'solver': 'sgd', 'tol': 0.0001, 'validation_fraction': 0.1, 'verbose': False, 'warm_start': False}
 	 1)	Confusion matrix:
 
-	[[ 4  0  0  0  1]
-    [ 0  0  0  4  0]
-    [ 0  0  0  3  0]
-    [ 0  0  0  8  1]
-    [ 0  0  0  4 15]]
+	[[ 4  0  0  0  0]
+    [ 0  4  0  0  0]
+    [ 0  0  2  1  0]
+    [ 0  0  0 10  1]
+    [ 0  0  0  1 17]]
 	 2)	Confusion matrix:
 
               precision    recall  f1-score   support
 
-       drugA       1.00      0.80      0.89         5
-       drugB       0.00      0.00      0.00         4
-       drugC       0.00      0.00      0.00         3
-       drugX       0.42      0.89      0.57         9
-       drugY       0.88      0.79      0.83        19
+       drugA       1.00      1.00      1.00         4
+       drugB       1.00      1.00      1.00         4
+       drugC       1.00      0.67      0.80         3
+       drugX       0.83      0.91      0.87        11
+       drugY       0.94      0.94      0.94        18
 
-    accuracy                           0.68        40
-   macro avg       0.46      0.50      0.46        40
-weighted avg       0.64      0.68      0.64        40
+    accuracy                           0.93        40
+   macro avg       0.96      0.90      0.92        40
+weighted avg       0.93      0.93      0.92        40
 
 ********** Top-MLP (10) **********
 	Hyper-parameters:
 	{'activation': 'relu', 'alpha': 0.0001, 'batch_size': 'auto', 'beta_1': 0.9, 'beta_2': 0.999, 'early_stopping': False, 'epsilon': 1e-08, 'hidden_layer_sizes': (10, 10, 10), 'learning_rate': 'constant', 'learning_rate_init': 0.001, 'max_fun': 15000, 'max_iter': 4000, 'momentum': 0.9, 'n_iter_no_change': 10, 'nesterovs_momentum': True, 'power_t': 0.5, 'random_state': None, 'shuffle': True, 'solver': 'sgd', 'tol': 0.0001, 'validation_fraction': 0.1, 'verbose': False, 'warm_start': False}
 	 1)	Confusion matrix:
 
-	[[ 0  0  0  0  5]
-    [ 0  0  0  4  0]
+	[[ 4  0  0  0  0]
+    [ 1  3  0  0  0]
     [ 0  0  0  2  1]
-    [ 0  0  0  2  7]
-    [ 0  0  0  5 14]]
+    [ 2  1  0  6  2]
+    [ 0  0  0  0 18]]
 	 2)	Confusion matrix:
 
               precision    recall  f1-score   support
 
-       drugA       0.00      0.00      0.00         5
-       drugB       0.00      0.00      0.00         4
+       drugA       0.57      1.00      0.73         4
+       drugB       0.75      0.75      0.75         4
        drugC       0.00      0.00      0.00         3
-       drugX       0.15      0.22      0.18         9
-       drugY       0.52      0.74      0.61        19
+       drugX       0.75      0.55      0.63        11
+       drugY       0.86      1.00      0.92        18
 
-    accuracy                           0.40        40
-   macro avg       0.13      0.19      0.16        40
-weighted avg       0.28      0.40      0.33        40
+    accuracy                           0.78        40
+   macro avg       0.59      0.66      0.61        40
+weighted avg       0.72      0.78      0.74        40
 
 ********** Top-MLP (11) **********
 	Hyper-parameters:
 	{'activation': 'relu', 'alpha': 0.0001, 'batch_size': 'auto', 'beta_1': 0.9, 'beta_2': 0.999, 'early_stopping': False, 'epsilon': 1e-08, 'hidden_layer_sizes': (30, 50), 'learning_rate': 'constant', 'learning_rate_init': 0.001, 'max_fun': 15000, 'max_iter': 4000, 'momentum': 0.9, 'n_iter_no_change': 10, 'nesterovs_momentum': True, 'power_t': 0.5, 'random_state': None, 'shuffle': True, 'solver': 'adam', 'tol': 0.0001, 'validation_fraction': 0.1, 'verbose': False, 'warm_start': False}
 	 1)	Confusion matrix:
 
-	[[ 0  0  0  2  3]
-    [ 0  0  0  4  0]
-    [ 0  0  0  3  0]
-    [ 0  0  0  5  4]
-    [ 0  0  0 10  9]]
+	[[ 4  0  0  0  0]
+    [ 0  4  0  0  0]
+    [ 0  0  3  0  0]
+    [ 0  0  0 10  1]
+    [ 0  0  0  0 18]]
 	 2)	Confusion matrix:
 
               precision    recall  f1-score   support
 
-       drugA       0.00      0.00      0.00         5
-       drugB       0.00      0.00      0.00         4
-       drugC       0.00      0.00      0.00         3
-       drugX       0.21      0.56      0.30         9
-       drugY       0.56      0.47      0.51        19
+       drugA       1.00      1.00      1.00         4
+       drugB       1.00      1.00      1.00         4
+       drugC       1.00      1.00      1.00         3
+       drugX       1.00      0.91      0.95        11
+       drugY       0.95      1.00      0.97        18
 
-    accuracy                           0.35        40
-   macro avg       0.15      0.21      0.16        40
-weighted avg       0.31      0.35      0.31        40
+    accuracy                           0.97        40
+   macro avg       0.99      0.98      0.99        40
+weighted avg       0.98      0.97      0.97        40
 
 ********** Top-MLP (12) **********
 	Hyper-parameters:
 	{'activation': 'relu', 'alpha': 0.0001, 'batch_size': 'auto', 'beta_1': 0.9, 'beta_2': 0.999, 'early_stopping': False, 'epsilon': 1e-08, 'hidden_layer_sizes': (10, 10, 10), 'learning_rate': 'constant', 'learning_rate_init': 0.001, 'max_fun': 15000, 'max_iter': 4000, 'momentum': 0.9, 'n_iter_no_change': 10, 'nesterovs_momentum': True, 'power_t': 0.5, 'random_state': None, 'shuffle': True, 'solver': 'adam', 'tol': 0.0001, 'validation_fraction': 0.1, 'verbose': False, 'warm_start': False}
 	 1)	Confusion matrix:
 
-	[[ 5  0  0  0  0]
+	[[ 4  0  0  0  0]
     [ 0  4  0  0  0]
     [ 0  0  3  0  0]
-    [ 0  0  0  9  0]
-    [ 0  1  1  0 17]]
+    [ 0  0  0 11  0]
+    [ 0  0  0  0 18]]
 	 2)	Confusion matrix:
 
               precision    recall  f1-score   support
 
-       drugA       1.00      1.00      1.00         5
-       drugB       0.80      1.00      0.89         4
-       drugC       0.75      1.00      0.86         3
-       drugX       1.00      1.00      1.00         9
-       drugY       1.00      0.89      0.94        19
+       drugA       1.00      1.00      1.00         4
+       drugB       1.00      1.00      1.00         4
+       drugC       1.00      1.00      1.00         3
+       drugX       1.00      1.00      1.00        11
+       drugY       1.00      1.00      1.00        18
 
-    accuracy                           0.95        40
-   macro avg       0.91      0.98      0.94        40
-weighted avg       0.96      0.95      0.95        40
+    accuracy                           1.00        40
+   macro avg       1.00      1.00      1.00        40
+weighted avg       1.00      1.00      1.00        40
 
 ********** Top-MLP (13) **********
 	Hyper-parameters:
 	{'activation': 'tanh', 'alpha': 0.0001, 'batch_size': 'auto', 'beta_1': 0.9, 'beta_2': 0.999, 'early_stopping': False, 'epsilon': 1e-08, 'hidden_layer_sizes': (30, 50), 'learning_rate': 'constant', 'learning_rate_init': 0.001, 'max_fun': 15000, 'max_iter': 4000, 'momentum': 0.9, 'n_iter_no_change': 10, 'nesterovs_momentum': True, 'power_t': 0.5, 'random_state': None, 'shuffle': True, 'solver': 'sgd', 'tol': 0.0001, 'validation_fraction': 0.1, 'verbose': False, 'warm_start': False}
 	 1)	Confusion matrix:
 
-	[[ 4  0  0  1  0]
-    [ 1  2  0  1  0]
+	[[ 3  1  0  0  0]
+    [ 0  4  0  0  0]
     [ 0  0  0  3  0]
-    [ 0  0  0  9  0]
-    [ 1  0  0  7 11]]
+    [ 0  0  0 11  0]
+    [ 0  0  0  2 16]]
 	 2)	Confusion matrix:
 
               precision    recall  f1-score   support
 
-       drugA       0.67      0.80      0.73         5
-       drugB       1.00      0.50      0.67         4
+       drugA       1.00      0.75      0.86         4
+       drugB       0.80      1.00      0.89         4
        drugC       0.00      0.00      0.00         3
-       drugX       0.43      1.00      0.60         9
-       drugY       1.00      0.58      0.73        19
+       drugX       0.69      1.00      0.81        11
+       drugY       1.00      0.89      0.94        18
 
-    accuracy                           0.65        40
-   macro avg       0.62      0.58      0.55        40
-weighted avg       0.75      0.65      0.64        40
+    accuracy                           0.85        40
+   macro avg       0.70      0.73      0.70        40
+weighted avg       0.82      0.85      0.82        40
 
 ********** Top-MLP (14) **********
 	Hyper-parameters:
 	{'activation': 'tanh', 'alpha': 0.0001, 'batch_size': 'auto', 'beta_1': 0.9, 'beta_2': 0.999, 'early_stopping': False, 'epsilon': 1e-08, 'hidden_layer_sizes': (10, 10, 10), 'learning_rate': 'constant', 'learning_rate_init': 0.001, 'max_fun': 15000, 'max_iter': 4000, 'momentum': 0.9, 'n_iter_no_change': 10, 'nesterovs_momentum': True, 'power_t': 0.5, 'random_state': None, 'shuffle': True, 'solver': 'sgd', 'tol': 0.0001, 'validation_fraction': 0.1, 'verbose': False, 'warm_start': False}
 	 1)	Confusion matrix:
 
-	[[ 0  0  0  1  4]
-    [ 0  0  0  2  2]
+	[[ 0  0  0  1  3]
+    [ 0  0  0  4  0]
     [ 0  0  0  2  1]
-    [ 0  0  0  2  7]
-    [ 0  0  0  0 19]]
+    [ 0  0  0  6  5]
+    [ 0  0  0  1 17]]
 	 2)	Confusion matrix:
 
               precision    recall  f1-score   support
 
-       drugA       0.00      0.00      0.00         5
+       drugA       0.00      0.00      0.00         4
        drugB       0.00      0.00      0.00         4
        drugC       0.00      0.00      0.00         3
-       drugX       0.29      0.22      0.25         9
-       drugY       0.58      1.00      0.73        19
+       drugX       0.43      0.55      0.48        11
+       drugY       0.65      0.94      0.77        18
 
-    accuracy                           0.53        40
-   macro avg       0.17      0.24      0.20        40
-weighted avg       0.34      0.53      0.40        40
+    accuracy                           0.57        40
+   macro avg       0.22      0.30      0.25        40
+weighted avg       0.41      0.57      0.48        40
 
 ********** Top-MLP (15) **********
 	Hyper-parameters:
 	{'activation': 'tanh', 'alpha': 0.0001, 'batch_size': 'auto', 'beta_1': 0.9, 'beta_2': 0.999, 'early_stopping': False, 'epsilon': 1e-08, 'hidden_layer_sizes': (30, 50), 'learning_rate': 'constant', 'learning_rate_init': 0.001, 'max_fun': 15000, 'max_iter': 4000, 'momentum': 0.9, 'n_iter_no_change': 10, 'nesterovs_momentum': True, 'power_t': 0.5, 'random_state': None, 'shuffle': True, 'solver': 'adam', 'tol': 0.0001, 'validation_fraction': 0.1, 'verbose': False, 'warm_start': False}
 	 1)	Confusion matrix:
 
-	[[ 5  0  0  0  0]
+	[[ 4  0  0  0  0]
     [ 0  4  0  0  0]
     [ 0  0  3  0  0]
-    [ 0  0  0  9  0]
-    [ 0  0  0  0 19]]
+    [ 0  0  0 10  1]
+    [ 0  0  0  0 18]]
 	 2)	Confusion matrix:
 
               precision    recall  f1-score   support
 
-       drugA       1.00      1.00      1.00         5
+       drugA       1.00      1.00      1.00         4
        drugB       1.00      1.00      1.00         4
        drugC       1.00      1.00      1.00         3
-       drugX       1.00      1.00      1.00         9
-       drugY       1.00      1.00      1.00        19
+       drugX       1.00      0.91      0.95        11
+       drugY       0.95      1.00      0.97        18
 
-    accuracy                           1.00        40
-   macro avg       1.00      1.00      1.00        40
-weighted avg       1.00      1.00      1.00        40
+    accuracy                           0.97        40
+   macro avg       0.99      0.98      0.99        40
+weighted avg       0.98      0.97      0.97        40
 
 ********** Top-MLP (16) **********
 	Hyper-parameters:
 	{'activation': 'tanh', 'alpha': 0.0001, 'batch_size': 'auto', 'beta_1': 0.9, 'beta_2': 0.999, 'early_stopping': False, 'epsilon': 1e-08, 'hidden_layer_sizes': (10, 10, 10), 'learning_rate': 'constant', 'learning_rate_init': 0.001, 'max_fun': 15000, 'max_iter': 4000, 'momentum': 0.9, 'n_iter_no_change': 10, 'nesterovs_momentum': True, 'power_t': 0.5, 'random_state': None, 'shuffle': True, 'solver': 'adam', 'tol': 0.0001, 'validation_fraction': 0.1, 'verbose': False, 'warm_start': False}
 	 1)	Confusion matrix:
 
-	[[ 5  0  0  0  0]
+	[[ 4  0  0  0  0]
     [ 0  4  0  0  0]
-    [ 0  0  2  1  0]
-    [ 0  0  0  9  0]
-    [ 0  0  1  0 18]]
+    [ 0  0  3  0  0]
+    [ 0  0  0 10  1]
+    [ 0  0  0  0 18]]
 	 2)	Confusion matrix:
 
               precision    recall  f1-score   support
 
-       drugA       1.00      1.00      1.00         5
+       drugA       1.00      1.00      1.00         4
        drugB       1.00      1.00      1.00         4
-       drugC       0.67      0.67      0.67         3
-       drugX       0.90      1.00      0.95         9
-       drugY       1.00      0.95      0.97        19
+       drugC       1.00      1.00      1.00         3
+       drugX       1.00      0.91      0.95        11
+       drugY       0.95      1.00      0.97        18
 
-    accuracy                           0.95        40
-   macro avg       0.91      0.92      0.92        40
-weighted avg       0.95      0.95      0.95        40
+    accuracy                           0.97        40
+   macro avg       0.99      0.98      0.99        40
+weighted avg       0.98      0.97      0.97        40
+
+******************************Try 2******************************
+ a) Gaussian Naive Bayes Classifier
+	 1) Confusion matrix:
+
+	[[ 4  0  0  0  0]
+    [ 0  4  0  0  0]
+    [ 0  0  3  0  0]
+    [ 0  0  0 10  1]
+    [ 2  1  1  0 14]]
+	 2) Confusion matrix:
+
+              precision    recall  f1-score   support
+
+       drugA       0.67      1.00      0.80         4
+       drugB       0.80      1.00      0.89         4
+       drugC       0.75      1.00      0.86         3
+       drugX       1.00      0.91      0.95        11
+       drugY       0.93      0.78      0.85        18
+
+    accuracy                           0.88        40
+   macro avg       0.83      0.94      0.87        40
+weighted avg       0.90      0.88      0.88        40
+
+ b) Decision Tree Classifier
+	 1) Confusion matrix:
+
+	[[ 4  0  0  0  0]
+    [ 0  4  0  0  0]
+    [ 0  0  3  0  0]
+    [ 0  0  0 11  0]
+    [ 0  0  0  0 18]]
+	 2) Confusion matrix:
+
+              precision    recall  f1-score   support
+
+       drugA       1.00      1.00      1.00         4
+       drugB       1.00      1.00      1.00         4
+       drugC       1.00      1.00      1.00         3
+       drugX       1.00      1.00      1.00        11
+       drugY       1.00      1.00      1.00        18
+
+    accuracy                           1.00        40
+   macro avg       1.00      1.00      1.00        40
+weighted avg       1.00      1.00      1.00        40
+
+ c) GridSearchCV Classifier
+	 1) Confusion matrix:
+
+	[[ 4  0  0  0  0]
+    [ 0  4  0  0  0]
+    [ 0  0  3  0  0]
+    [ 0  0  0 11  0]
+    [ 0  0  0  0 18]]
+	 2) Confusion matrix:
+
+              precision    recall  f1-score   support
+
+       drugA       1.00      1.00      1.00         4
+       drugB       1.00      1.00      1.00         4
+       drugC       1.00      1.00      1.00         3
+       drugX       1.00      1.00      1.00        11
+       drugY       1.00      1.00      1.00        18
+
+    accuracy                           1.00        40
+   macro avg       1.00      1.00      1.00        40
+weighted avg       1.00      1.00      1.00        40
+
+ d) Perceptron Classifier
+	 1) Confusion matrix:
+
+	[[ 1  0  0  0  3]
+    [ 3  0  0  0  1]
+    [ 0  1  0  0  2]
+    [ 2  3  0  0  6]
+    [ 0  0  0  0 18]]
+	 2) Confusion matrix:
+
+              precision    recall  f1-score   support
+
+       drugA       0.17      0.25      0.20         4
+       drugB       0.00      0.00      0.00         4
+       drugC       0.00      0.00      0.00         3
+       drugX       0.00      0.00      0.00        11
+       drugY       0.60      1.00      0.75        18
+
+    accuracy                           0.48        40
+   macro avg       0.15      0.25      0.19        40
+weighted avg       0.29      0.47      0.36        40
+
+ e) Multi-Layered Perceptron (Base-MLP) Classifier
+Hyper-parameters:
+	{'activation': 'logistic', 'alpha': 0.0001, 'batch_size': 'auto', 'beta_1': 0.9, 'beta_2': 0.999, 'early_stopping': False, 'epsilon': 1e-08, 'hidden_layer_sizes': 100, 'learning_rate': 'constant', 'learning_rate_init': 0.001, 'max_fun': 15000, 'max_iter': 2500, 'momentum': 0.9, 'n_iter_no_change': 10, 'nesterovs_momentum': True, 'power_t': 0.5, 'random_state': None, 'shuffle': True, 'solver': 'sgd', 'tol': 0.0001, 'validation_fraction': 0.1, 'verbose': False, 'warm_start': False}
+	 1)	Confusion matrix:
+
+	[[ 0  0  0  2  2]
+    [ 0  0  0  4  0]
+    [ 0  0  0  3  0]
+    [ 0  0  0  8  3]
+    [ 0  0  0  1 17]]
+	 2)	Confusion matrix:
+
+              precision    recall  f1-score   support
+
+       drugA       0.00      0.00      0.00         4
+       drugB       0.00      0.00      0.00         4
+       drugC       0.00      0.00      0.00         3
+       drugX       0.44      0.73      0.55        11
+       drugY       0.77      0.94      0.85        18
+
+    accuracy                           0.62        40
+   macro avg       0.24      0.33      0.28        40
+weighted avg       0.47      0.62      0.53        40
+
+ f) Multi-Layered Perceptron (Top-MLP) Classifier
+
+********** Top-MLP (1) **********
+	Hyper-parameters:
+	{'activation': 'identity', 'alpha': 0.0001, 'batch_size': 'auto', 'beta_1': 0.9, 'beta_2': 0.999, 'early_stopping': False, 'epsilon': 1e-08, 'hidden_layer_sizes': (30, 50), 'learning_rate': 'constant', 'learning_rate_init': 0.001, 'max_fun': 15000, 'max_iter': 4000, 'momentum': 0.9, 'n_iter_no_change': 10, 'nesterovs_momentum': True, 'power_t': 0.5, 'random_state': None, 'shuffle': True, 'solver': 'sgd', 'tol': 0.0001, 'validation_fraction': 0.1, 'verbose': False, 'warm_start': False}
+	 1)	Confusion matrix:
+
+	[[ 4  0  0  0  0]
+    [ 0  0  0  4  0]
+    [ 0  0  3  0  0]
+    [ 0  0  0 11  0]
+    [ 0  0  0  2 16]]
+	 2)	Confusion matrix:
+
+              precision    recall  f1-score   support
+
+       drugA       1.00      1.00      1.00         4
+       drugB       0.00      0.00      0.00         4
+       drugC       1.00      1.00      1.00         3
+       drugX       0.65      1.00      0.79        11
+       drugY       1.00      0.89      0.94        18
+
+    accuracy                           0.85        40
+   macro avg       0.73      0.78      0.75        40
+weighted avg       0.80      0.85      0.81        40
+
+********** Top-MLP (2) **********
+	Hyper-parameters:
+	{'activation': 'identity', 'alpha': 0.0001, 'batch_size': 'auto', 'beta_1': 0.9, 'beta_2': 0.999, 'early_stopping': False, 'epsilon': 1e-08, 'hidden_layer_sizes': (10, 10, 10), 'learning_rate': 'constant', 'learning_rate_init': 0.001, 'max_fun': 15000, 'max_iter': 4000, 'momentum': 0.9, 'n_iter_no_change': 10, 'nesterovs_momentum': True, 'power_t': 0.5, 'random_state': None, 'shuffle': True, 'solver': 'sgd', 'tol': 0.0001, 'validation_fraction': 0.1, 'verbose': False, 'warm_start': False}
+	 1)	Confusion matrix:
+
+	[[ 1  0  0  3  0]
+    [ 0  0  0  4  0]
+    [ 0  0  3  0  0]
+    [ 0  0  0 11  0]
+    [ 0  0  0  2 16]]
+	 2)	Confusion matrix:
+
+              precision    recall  f1-score   support
+
+       drugA       1.00      0.25      0.40         4
+       drugB       0.00      0.00      0.00         4
+       drugC       1.00      1.00      1.00         3
+       drugX       0.55      1.00      0.71        11
+       drugY       1.00      0.89      0.94        18
+
+    accuracy                           0.78        40
+   macro avg       0.71      0.63      0.61        40
+weighted avg       0.78      0.78      0.73        40
+
+********** Top-MLP (3) **********
+	Hyper-parameters:
+	{'activation': 'identity', 'alpha': 0.0001, 'batch_size': 'auto', 'beta_1': 0.9, 'beta_2': 0.999, 'early_stopping': False, 'epsilon': 1e-08, 'hidden_layer_sizes': (30, 50), 'learning_rate': 'constant', 'learning_rate_init': 0.001, 'max_fun': 15000, 'max_iter': 4000, 'momentum': 0.9, 'n_iter_no_change': 10, 'nesterovs_momentum': True, 'power_t': 0.5, 'random_state': None, 'shuffle': True, 'solver': 'adam', 'tol': 0.0001, 'validation_fraction': 0.1, 'verbose': False, 'warm_start': False}
+	 1)	Confusion matrix:
+
+	[[ 4  0  0  0  0]
+    [ 0  4  0  0  0]
+    [ 0  0  3  0  0]
+    [ 0  0  0 10  1]
+    [ 0  0  0  0 18]]
+	 2)	Confusion matrix:
+
+              precision    recall  f1-score   support
+
+       drugA       1.00      1.00      1.00         4
+       drugB       1.00      1.00      1.00         4
+       drugC       1.00      1.00      1.00         3
+       drugX       1.00      0.91      0.95        11
+       drugY       0.95      1.00      0.97        18
+
+    accuracy                           0.97        40
+   macro avg       0.99      0.98      0.99        40
+weighted avg       0.98      0.97      0.97        40
+
+********** Top-MLP (4) **********
+	Hyper-parameters:
+	{'activation': 'identity', 'alpha': 0.0001, 'batch_size': 'auto', 'beta_1': 0.9, 'beta_2': 0.999, 'early_stopping': False, 'epsilon': 1e-08, 'hidden_layer_sizes': (10, 10, 10), 'learning_rate': 'constant', 'learning_rate_init': 0.001, 'max_fun': 15000, 'max_iter': 4000, 'momentum': 0.9, 'n_iter_no_change': 10, 'nesterovs_momentum': True, 'power_t': 0.5, 'random_state': None, 'shuffle': True, 'solver': 'adam', 'tol': 0.0001, 'validation_fraction': 0.1, 'verbose': False, 'warm_start': False}
+	 1)	Confusion matrix:
+
+	[[ 4  0  0  0  0]
+    [ 0  4  0  0  0]
+    [ 0  0  3  0  0]
+    [ 0  0  0 10  1]
+    [ 0  0  0  0 18]]
+	 2)	Confusion matrix:
+
+              precision    recall  f1-score   support
+
+       drugA       1.00      1.00      1.00         4
+       drugB       1.00      1.00      1.00         4
+       drugC       1.00      1.00      1.00         3
+       drugX       1.00      0.91      0.95        11
+       drugY       0.95      1.00      0.97        18
+
+    accuracy                           0.97        40
+   macro avg       0.99      0.98      0.99        40
+weighted avg       0.98      0.97      0.97        40
+
+********** Top-MLP (5) **********
+	Hyper-parameters:
+	{'activation': 'logistic', 'alpha': 0.0001, 'batch_size': 'auto', 'beta_1': 0.9, 'beta_2': 0.999, 'early_stopping': False, 'epsilon': 1e-08, 'hidden_layer_sizes': (30, 50), 'learning_rate': 'constant', 'learning_rate_init': 0.001, 'max_fun': 15000, 'max_iter': 4000, 'momentum': 0.9, 'n_iter_no_change': 10, 'nesterovs_momentum': True, 'power_t': 0.5, 'random_state': None, 'shuffle': True, 'solver': 'sgd', 'tol': 0.0001, 'validation_fraction': 0.1, 'verbose': False, 'warm_start': False}
+	 1)	Confusion matrix:
+
+	[[ 0  0  0  0  4]
+    [ 0  0  0  0  4]
+    [ 0  0  0  0  3]
+    [ 0  0  0  0 11]
+    [ 0  0  0  0 18]]
+	 2)	Confusion matrix:
+
+              precision    recall  f1-score   support
+
+       drugA       0.00      0.00      0.00         4
+       drugB       0.00      0.00      0.00         4
+       drugC       0.00      0.00      0.00         3
+       drugX       0.00      0.00      0.00        11
+       drugY       0.45      1.00      0.62        18
+
+    accuracy                           0.45        40
+   macro avg       0.09      0.20      0.12        40
+weighted avg       0.20      0.45      0.28        40
+
+********** Top-MLP (6) **********
+	Hyper-parameters:
+	{'activation': 'logistic', 'alpha': 0.0001, 'batch_size': 'auto', 'beta_1': 0.9, 'beta_2': 0.999, 'early_stopping': False, 'epsilon': 1e-08, 'hidden_layer_sizes': (10, 10, 10), 'learning_rate': 'constant', 'learning_rate_init': 0.001, 'max_fun': 15000, 'max_iter': 4000, 'momentum': 0.9, 'n_iter_no_change': 10, 'nesterovs_momentum': True, 'power_t': 0.5, 'random_state': None, 'shuffle': True, 'solver': 'sgd', 'tol': 0.0001, 'validation_fraction': 0.1, 'verbose': False, 'warm_start': False}
+	 1)	Confusion matrix:
+
+	[[ 0  0  0  0  4]
+    [ 0  0  0  0  4]
+    [ 0  0  0  0  3]
+    [ 0  0  0  0 11]
+    [ 0  0  0  0 18]]
+	 2)	Confusion matrix:
+
+              precision    recall  f1-score   support
+
+       drugA       0.00      0.00      0.00         4
+       drugB       0.00      0.00      0.00         4
+       drugC       0.00      0.00      0.00         3
+       drugX       0.00      0.00      0.00        11
+       drugY       0.45      1.00      0.62        18
+
+    accuracy                           0.45        40
+   macro avg       0.09      0.20      0.12        40
+weighted avg       0.20      0.45      0.28        40
+
+********** Top-MLP (7) **********
+	Hyper-parameters:
+	{'activation': 'logistic', 'alpha': 0.0001, 'batch_size': 'auto', 'beta_1': 0.9, 'beta_2': 0.999, 'early_stopping': False, 'epsilon': 1e-08, 'hidden_layer_sizes': (30, 50), 'learning_rate': 'constant', 'learning_rate_init': 0.001, 'max_fun': 15000, 'max_iter': 4000, 'momentum': 0.9, 'n_iter_no_change': 10, 'nesterovs_momentum': True, 'power_t': 0.5, 'random_state': None, 'shuffle': True, 'solver': 'adam', 'tol': 0.0001, 'validation_fraction': 0.1, 'verbose': False, 'warm_start': False}
+	 1)	Confusion matrix:
+
+	[[ 4  0  0  0  0]
+    [ 0  4  0  0  0]
+    [ 0  0  3  0  0]
+    [ 0  0  0 10  1]
+    [ 0  0  0  0 18]]
+	 2)	Confusion matrix:
+
+              precision    recall  f1-score   support
+
+       drugA       1.00      1.00      1.00         4
+       drugB       1.00      1.00      1.00         4
+       drugC       1.00      1.00      1.00         3
+       drugX       1.00      0.91      0.95        11
+       drugY       0.95      1.00      0.97        18
+
+    accuracy                           0.97        40
+   macro avg       0.99      0.98      0.99        40
+weighted avg       0.98      0.97      0.97        40
+
+********** Top-MLP (8) **********
+	Hyper-parameters:
+	{'activation': 'logistic', 'alpha': 0.0001, 'batch_size': 'auto', 'beta_1': 0.9, 'beta_2': 0.999, 'early_stopping': False, 'epsilon': 1e-08, 'hidden_layer_sizes': (10, 10, 10), 'learning_rate': 'constant', 'learning_rate_init': 0.001, 'max_fun': 15000, 'max_iter': 4000, 'momentum': 0.9, 'n_iter_no_change': 10, 'nesterovs_momentum': True, 'power_t': 0.5, 'random_state': None, 'shuffle': True, 'solver': 'adam', 'tol': 0.0001, 'validation_fraction': 0.1, 'verbose': False, 'warm_start': False}
+	 1)	Confusion matrix:
+
+	[[ 4  0  0  0  0]
+    [ 0  4  0  0  0]
+    [ 0  0  3  0  0]
+    [ 0  0  1 10  0]
+    [ 0  0  0  0 18]]
+	 2)	Confusion matrix:
+
+              precision    recall  f1-score   support
+
+       drugA       1.00      1.00      1.00         4
+       drugB       1.00      1.00      1.00         4
+       drugC       0.75      1.00      0.86         3
+       drugX       1.00      0.91      0.95        11
+       drugY       1.00      1.00      1.00        18
+
+    accuracy                           0.97        40
+   macro avg       0.95      0.98      0.96        40
+weighted avg       0.98      0.97      0.98        40
+
+********** Top-MLP (9) **********
+	Hyper-parameters:
+	{'activation': 'relu', 'alpha': 0.0001, 'batch_size': 'auto', 'beta_1': 0.9, 'beta_2': 0.999, 'early_stopping': False, 'epsilon': 1e-08, 'hidden_layer_sizes': (30, 50), 'learning_rate': 'constant', 'learning_rate_init': 0.001, 'max_fun': 15000, 'max_iter': 4000, 'momentum': 0.9, 'n_iter_no_change': 10, 'nesterovs_momentum': True, 'power_t': 0.5, 'random_state': None, 'shuffle': True, 'solver': 'sgd', 'tol': 0.0001, 'validation_fraction': 0.1, 'verbose': False, 'warm_start': False}
+	 1)	Confusion matrix:
+
+	[[ 4  0  0  0  0]
+    [ 0  4  0  0  0]
+    [ 0  0  2  1  0]
+    [ 0  0  0 10  1]
+    [ 0  0  0  1 17]]
+	 2)	Confusion matrix:
+
+              precision    recall  f1-score   support
+
+       drugA       1.00      1.00      1.00         4
+       drugB       1.00      1.00      1.00         4
+       drugC       1.00      0.67      0.80         3
+       drugX       0.83      0.91      0.87        11
+       drugY       0.94      0.94      0.94        18
+
+    accuracy                           0.93        40
+   macro avg       0.96      0.90      0.92        40
+weighted avg       0.93      0.93      0.92        40
+
+********** Top-MLP (10) **********
+	Hyper-parameters:
+	{'activation': 'relu', 'alpha': 0.0001, 'batch_size': 'auto', 'beta_1': 0.9, 'beta_2': 0.999, 'early_stopping': False, 'epsilon': 1e-08, 'hidden_layer_sizes': (10, 10, 10), 'learning_rate': 'constant', 'learning_rate_init': 0.001, 'max_fun': 15000, 'max_iter': 4000, 'momentum': 0.9, 'n_iter_no_change': 10, 'nesterovs_momentum': True, 'power_t': 0.5, 'random_state': None, 'shuffle': True, 'solver': 'sgd', 'tol': 0.0001, 'validation_fraction': 0.1, 'verbose': False, 'warm_start': False}
+	 1)	Confusion matrix:
+
+	[[ 4  0  0  0  0]
+    [ 1  3  0  0  0]
+    [ 0  0  0  2  1]
+    [ 2  1  0  6  2]
+    [ 0  0  0  0 18]]
+	 2)	Confusion matrix:
+
+              precision    recall  f1-score   support
+
+       drugA       0.57      1.00      0.73         4
+       drugB       0.75      0.75      0.75         4
+       drugC       0.00      0.00      0.00         3
+       drugX       0.75      0.55      0.63        11
+       drugY       0.86      1.00      0.92        18
+
+    accuracy                           0.78        40
+   macro avg       0.59      0.66      0.61        40
+weighted avg       0.72      0.78      0.74        40
+
+********** Top-MLP (11) **********
+	Hyper-parameters:
+	{'activation': 'relu', 'alpha': 0.0001, 'batch_size': 'auto', 'beta_1': 0.9, 'beta_2': 0.999, 'early_stopping': False, 'epsilon': 1e-08, 'hidden_layer_sizes': (30, 50), 'learning_rate': 'constant', 'learning_rate_init': 0.001, 'max_fun': 15000, 'max_iter': 4000, 'momentum': 0.9, 'n_iter_no_change': 10, 'nesterovs_momentum': True, 'power_t': 0.5, 'random_state': None, 'shuffle': True, 'solver': 'adam', 'tol': 0.0001, 'validation_fraction': 0.1, 'verbose': False, 'warm_start': False}
+	 1)	Confusion matrix:
+
+	[[ 4  0  0  0  0]
+    [ 0  4  0  0  0]
+    [ 0  0  3  0  0]
+    [ 0  0  0 10  1]
+    [ 0  0  0  0 18]]
+	 2)	Confusion matrix:
+
+              precision    recall  f1-score   support
+
+       drugA       1.00      1.00      1.00         4
+       drugB       1.00      1.00      1.00         4
+       drugC       1.00      1.00      1.00         3
+       drugX       1.00      0.91      0.95        11
+       drugY       0.95      1.00      0.97        18
+
+    accuracy                           0.97        40
+   macro avg       0.99      0.98      0.99        40
+weighted avg       0.98      0.97      0.97        40
+
+********** Top-MLP (12) **********
+	Hyper-parameters:
+	{'activation': 'relu', 'alpha': 0.0001, 'batch_size': 'auto', 'beta_1': 0.9, 'beta_2': 0.999, 'early_stopping': False, 'epsilon': 1e-08, 'hidden_layer_sizes': (10, 10, 10), 'learning_rate': 'constant', 'learning_rate_init': 0.001, 'max_fun': 15000, 'max_iter': 4000, 'momentum': 0.9, 'n_iter_no_change': 10, 'nesterovs_momentum': True, 'power_t': 0.5, 'random_state': None, 'shuffle': True, 'solver': 'adam', 'tol': 0.0001, 'validation_fraction': 0.1, 'verbose': False, 'warm_start': False}
+	 1)	Confusion matrix:
+
+	[[ 4  0  0  0  0]
+    [ 0  4  0  0  0]
+    [ 0  0  3  0  0]
+    [ 0  0  0 11  0]
+    [ 0  0  0  0 18]]
+	 2)	Confusion matrix:
+
+              precision    recall  f1-score   support
+
+       drugA       1.00      1.00      1.00         4
+       drugB       1.00      1.00      1.00         4
+       drugC       1.00      1.00      1.00         3
+       drugX       1.00      1.00      1.00        11
+       drugY       1.00      1.00      1.00        18
+
+    accuracy                           1.00        40
+   macro avg       1.00      1.00      1.00        40
+weighted avg       1.00      1.00      1.00        40
+
+********** Top-MLP (13) **********
+	Hyper-parameters:
+	{'activation': 'tanh', 'alpha': 0.0001, 'batch_size': 'auto', 'beta_1': 0.9, 'beta_2': 0.999, 'early_stopping': False, 'epsilon': 1e-08, 'hidden_layer_sizes': (30, 50), 'learning_rate': 'constant', 'learning_rate_init': 0.001, 'max_fun': 15000, 'max_iter': 4000, 'momentum': 0.9, 'n_iter_no_change': 10, 'nesterovs_momentum': True, 'power_t': 0.5, 'random_state': None, 'shuffle': True, 'solver': 'sgd', 'tol': 0.0001, 'validation_fraction': 0.1, 'verbose': False, 'warm_start': False}
+	 1)	Confusion matrix:
+
+	[[ 3  1  0  0  0]
+    [ 0  4  0  0  0]
+    [ 0  0  0  3  0]
+    [ 0  0  0 11  0]
+    [ 0  0  0  2 16]]
+	 2)	Confusion matrix:
+
+              precision    recall  f1-score   support
+
+       drugA       1.00      0.75      0.86         4
+       drugB       0.80      1.00      0.89         4
+       drugC       0.00      0.00      0.00         3
+       drugX       0.69      1.00      0.81        11
+       drugY       1.00      0.89      0.94        18
+
+    accuracy                           0.85        40
+   macro avg       0.70      0.73      0.70        40
+weighted avg       0.82      0.85      0.82        40
+
+********** Top-MLP (14) **********
+	Hyper-parameters:
+	{'activation': 'tanh', 'alpha': 0.0001, 'batch_size': 'auto', 'beta_1': 0.9, 'beta_2': 0.999, 'early_stopping': False, 'epsilon': 1e-08, 'hidden_layer_sizes': (10, 10, 10), 'learning_rate': 'constant', 'learning_rate_init': 0.001, 'max_fun': 15000, 'max_iter': 4000, 'momentum': 0.9, 'n_iter_no_change': 10, 'nesterovs_momentum': True, 'power_t': 0.5, 'random_state': None, 'shuffle': True, 'solver': 'sgd', 'tol': 0.0001, 'validation_fraction': 0.1, 'verbose': False, 'warm_start': False}
+	 1)	Confusion matrix:
+
+	[[ 0  0  0  1  3]
+    [ 0  0  0  4  0]
+    [ 0  0  0  2  1]
+    [ 0  0  0  6  5]
+    [ 0  0  0  1 17]]
+	 2)	Confusion matrix:
+
+              precision    recall  f1-score   support
+
+       drugA       0.00      0.00      0.00         4
+       drugB       0.00      0.00      0.00         4
+       drugC       0.00      0.00      0.00         3
+       drugX       0.43      0.55      0.48        11
+       drugY       0.65      0.94      0.77        18
+
+    accuracy                           0.57        40
+   macro avg       0.22      0.30      0.25        40
+weighted avg       0.41      0.57      0.48        40
+
+********** Top-MLP (15) **********
+	Hyper-parameters:
+	{'activation': 'tanh', 'alpha': 0.0001, 'batch_size': 'auto', 'beta_1': 0.9, 'beta_2': 0.999, 'early_stopping': False, 'epsilon': 1e-08, 'hidden_layer_sizes': (30, 50), 'learning_rate': 'constant', 'learning_rate_init': 0.001, 'max_fun': 15000, 'max_iter': 4000, 'momentum': 0.9, 'n_iter_no_change': 10, 'nesterovs_momentum': True, 'power_t': 0.5, 'random_state': None, 'shuffle': True, 'solver': 'adam', 'tol': 0.0001, 'validation_fraction': 0.1, 'verbose': False, 'warm_start': False}
+	 1)	Confusion matrix:
+
+	[[ 4  0  0  0  0]
+    [ 0  4  0  0  0]
+    [ 0  0  3  0  0]
+    [ 0  0  0 10  1]
+    [ 0  0  0  0 18]]
+	 2)	Confusion matrix:
+
+              precision    recall  f1-score   support
+
+       drugA       1.00      1.00      1.00         4
+       drugB       1.00      1.00      1.00         4
+       drugC       1.00      1.00      1.00         3
+       drugX       1.00      0.91      0.95        11
+       drugY       0.95      1.00      0.97        18
+
+    accuracy                           0.97        40
+   macro avg       0.99      0.98      0.99        40
+weighted avg       0.98      0.97      0.97        40
+
+********** Top-MLP (16) **********
+	Hyper-parameters:
+	{'activation': 'tanh', 'alpha': 0.0001, 'batch_size': 'auto', 'beta_1': 0.9, 'beta_2': 0.999, 'early_stopping': False, 'epsilon': 1e-08, 'hidden_layer_sizes': (10, 10, 10), 'learning_rate': 'constant', 'learning_rate_init': 0.001, 'max_fun': 15000, 'max_iter': 4000, 'momentum': 0.9, 'n_iter_no_change': 10, 'nesterovs_momentum': True, 'power_t': 0.5, 'random_state': None, 'shuffle': True, 'solver': 'adam', 'tol': 0.0001, 'validation_fraction': 0.1, 'verbose': False, 'warm_start': False}
+	 1)	Confusion matrix:
+
+	[[ 4  0  0  0  0]
+    [ 0  4  0  0  0]
+    [ 0  0  3  0  0]
+    [ 0  0  0 10  1]
+    [ 0  0  0  0 18]]
+	 2)	Confusion matrix:
+
+              precision    recall  f1-score   support
+
+       drugA       1.00      1.00      1.00         4
+       drugB       1.00      1.00      1.00         4
+       drugC       1.00      1.00      1.00         3
+       drugX       1.00      0.91      0.95        11
+       drugY       0.95      1.00      0.97        18
+
+    accuracy                           0.97        40
+   macro avg       0.99      0.98      0.99        40
+weighted avg       0.98      0.97      0.97        40

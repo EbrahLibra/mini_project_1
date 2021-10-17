@@ -92,7 +92,7 @@ predictions.update({'Multi-Layered Perceptron (Top-MLP) Classifier': top_mlp_pre
 
 
 def generate_drug_performance(a, ps):
-    with open('../out/drug-performance.txt', 'w') as f:
+    with open('../out/drug-performance.txt', 'a') as f:
         f.write('\n' + '*' * 30 + 'Try ' + str(a) + '*' * 30)
         for i, (k, p) in enumerate(ps.items()):
             f.write('\n ' + chr(i + 97) + ') ' + k)
